@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+    
+    <link rel="stylesheet" type="text/css" href="std.css">
+</head>
+<body>
+    <!--modal code-->
+    <div class="text-right mt-2 p-5">
+        <button class="btn btn-primary" id="registrationModal" data-toggle="modal" data-target="#reg">ADD</button>
+    </div>
+    <div class="modal fade" id="reg">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="model-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="text-center text-secondary mt-2">Student Register</h2>
+                </div>
+                <div class="modal-body">
+                    <form id="registrationForm">
+                        <div class="row jumbotron bg-secondary">
+                            <div class="col-sm-6 form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name." required>
+                                <div id="nameError" class="text-danger"></div>
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email." required>
+                                <div id="emailError" class="text-danger"></div>
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter your phone num.">
+                                <div id="phoneError" class="text-danger"></div>
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label for="location">Location</label>
+                                <input type="text" class="form-control" name="location" id="location" placeholder="Enter your location." required>
+                                <div id="locationError" class="text-danger"></div>
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label for="gender">Gender</label>
+                                <select id="gender" class="form-control browser-default custom-select" required>
+                                    <option selected disabled value="">Choose Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="unspecified">Unspecified</option>
+                                </select>
+                                <div id="genderError" class="text-danger"></div>
+                            </div>
+                            <div class="col-sm-6 form-group">
+                                <label for="state">State</label>
+                                <input type="text" class="form-control" name="state" id="state" placeholder="Enter your state." required>
+                                <div id="stateError" class="text-danger"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="save()">Submit</button>
+                    <button class="btn btn-danger" data-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Table code-->
+    <div class="container">
+        <h3>Student Details</h3>
+        
+        <table id="table">
+            <thead>
+                <tr>
+                    <th>Sno</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Location</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="dataRows">
+                <!--records will created Dynamically-->
+            </tbody>
+        </table>
+    </div>
+
+    <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+    <script src="model11.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+</body>
+</html>
